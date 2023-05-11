@@ -11,8 +11,8 @@ function App() {
 
   return (
     <>
+    
       <div className="container">
-        
         <div className="box1">
           <div className="flex">
             <h4 className="test bio">Hello</h4>
@@ -21,8 +21,8 @@ function App() {
           <div className="flex">
             <div>
               <p className="text1">
-                I'm Luenne Neri, a NYC-based Sr. Product Designer. Most recently
-                at Twitter, previously at Work & Co. I'm weirdly passionate
+                I'm Angelo Maiele, a Miami-based software enginer. Most recently
+                at Line5 and blueLightTech, I'm weirdly passionate
                 about both design systems and trust & safety matters. And as
                 someone with a multidisciplinary background, I love bringing
                 different philosophies into the design process.
@@ -44,7 +44,9 @@ function App() {
         </div>
 
         <div className="box2">
-          <img src={arrow} className="arrow-image"></img>
+          <div className="circle-hover">
+          <a href='#projects-main'><img src={arrow} className="arrow-image"></img></a>
+          </div>
         </div>
         <Projects/>
       </div>

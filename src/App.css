@@ -1,16 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap');
 
+body{
+  
+}
 .container{
   border: 20px solid blue;
-  height: auto; /* Adjust the height as needed */
+  height: 100vh; /* Adjust the height as needed */
   width: 100vw; /* Adjust the width as needed */
   box-sizing: border-box;
   padding-top: 50px;
+  overflow: scroll;
+  background-color: aliceblue;
   
 }
 .box1{
-height: 85vh;
+height: 70vh;
 }
 
 .bio{
@@ -56,6 +61,15 @@ height: 85vh;
 .top-margin{
   margin-top: 10px;
 }
+.under-border:hover{
+  background-color: blue;
+  color: white;
+  max-width: 160px;
+  height: 30px;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
 .arrow-image{
   
   width: 60px;
@@ -69,9 +83,20 @@ height: 85vh;
 }
 
 .box2 {
-  position: absolute;
+  /* position: absolute;
   bottom: 0;
   left: 0;
-  right: 0;
+  right: 0; */
   padding-bottom: 100px;
+}
+
+
+.circle-hover:hover{
+  background-color: blue;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  text-align: center;
+  margin-left: 50px;
+
 }
