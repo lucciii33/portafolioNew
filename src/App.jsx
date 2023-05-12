@@ -5,6 +5,7 @@ import arrow from "./assets/arrow.png";
 import viteLogo from "/vite.svg";
 import "./App.css";
 import Projects from "./projects"
+import CoffeBanner from "./components/coffeBanner";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -49,6 +50,7 @@ function App() {
           </div>
         </div>
         <Projects/>
+        <CoffeBanner/>
       </div>
     </>
   );

@@ -1,0 +1,21 @@
+.coffee-img{
+    width: 60px;
+    height: 60px;
+    
+}
+
+.container-coffe{
+    width: 100%;
+    height: 350px;
+    padding: 80px;
+    padding-top: 150px;
+    background-color: beige;
+}
+.separation{
+    margin-right: 10px;
+}
+.text1{
+    text-align: left;
+    font-size: 18px;
+    font-family: 'Nunito', sans-serif;
+  }
