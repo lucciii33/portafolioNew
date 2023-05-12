@@ -19,8 +19,8 @@ function App() {
             <h4 className="test bio">Hello</h4>
             <img src={hand} className="hand-image"></img>
           </div>
-          <div className="flex">
-            <div>
+          <div className="">
+            <div className="max-width-banner-1">
               <p className="text1">
                 I'm Angelo Maiele, a Miami-based software enginer. Most recently
                 at Line5 and blueLightTech, I'm weirdly passionate
@@ -34,7 +34,6 @@ function App() {
                 coffee is good.
               </p>
             </div>
-            <div className="transparent"></div>
           </div>
           <div className="flex top-margin">
             <div className=" under-border">
