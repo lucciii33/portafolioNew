@@ -51,48 +51,67 @@ height: 70vh;
   font-size: 18px;
   font-family: 'Nunito', sans-serif;
 }
-.transparent{
-  width: 2000px;
-  
-}
+
 
 .top-margin{
   margin-top: 10px;
-}
-.under-border:hover{
-  background-color: blue;
-  color: white;
-  max-width: 160px;
-  height: 30px;
-  padding: 10px;
-  border-radius: 10px;
-  cursor: pointer;
-}
-.arrow-image{
-  
-  width: 60px;
-  height: 45px;
-  padding-left: 50px;
 }
 
 .under-border{
   border-bottom: 3px solid blue;
   display: flex;
 }
+.under-border:hover{
+  background-color: blue;
+  color: white;
+  height: 20px;
+  padding: 10px;
+  transition: height 0.3s ease-in-out;
+  cursor: pointer;
+}
+.under-border:hover::before {
+  height: 100%;
+}
+
+
+
+
+
+
+
+
+
+.arrow-image{
+  width: 60px;
+  height: 45px;
+  /* padding-left: 50px; */
+}
+.arrow-image:hover{
+  width: 60px;
+  height: 45px;
+  margin-top: 7px;
+}
+
+
 
 .box2 {
   /* position: absolute;
   bottom: 0;
   left: 0;
   right: 0; */
+  display: flex;
+  justify-content: start;
+  align-items: center;
   padding-bottom: 100px;
 }
-
+.circle-hover{
+  margin-left: 50px;
+}
 
 .circle-hover:hover{
   background-color: blue;
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   text-align: center;
   margin-left: 50px;

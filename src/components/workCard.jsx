@@ -3,7 +3,7 @@ import { useState } from "react";
 
 import "../projects.css";
 
-function WorkCard({title, description, time}) {
+function WorkCard({title, description, time, mockup1}) {
 
 
   return (
@@ -15,7 +15,7 @@ function WorkCard({title, description, time}) {
         </div>
 
         <div className="workCard-image">
-            <p>Image here</p>
+            <img src={mockup1}className="workCard-image"></img>
         </div>
 
         <div className="flex-2">
