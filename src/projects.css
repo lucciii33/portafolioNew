@@ -21,6 +21,28 @@ border-radius: 30px;
     display: flex;
     justify-content: space-around;
 }
+.padding-letters{
+    padding: 0px;
+}
+@media(max-width: 450px){
+    .flex-2{
+        display: block;
+        padding: 30px;
+        
+    }
+    .workCard-image{
+        width: 301px;
+        height: 370px;
+        background-color: white;
+        border-radius: 30px;
+        display: block;
+    margin: auto;
+    
+        }
+        .padding-letters{
+            padding: 30px;
+        }
+}
 
 .max-width{
     max-width: 600px;
@@ -30,4 +52,9 @@ border-radius: 30px;
     font-size: 18px;
     font-family: 'Nunito', sans-serif;
   }
-
+.separation{
+    padding-top: 40px;
+}
+.bold{
+font-weight: bold !important;
+}
