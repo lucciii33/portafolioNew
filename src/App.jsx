@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import hand from "./assets/victory.png";
 import email from "./assets/email.png";
 import arrow from "./assets/arrow.png";
@@ -8,12 +8,32 @@ import Projects from "./projects"
 import CoffeBanner from "./components/coffeBanner";
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [scrollPosition, setScrollPosition] = useState(0);
+  console.log(scrollPosition)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollPosition(window.scrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  if(scrollPosition < 5){
+    console.log("menor a 5 deberia ser rojo")
+  }else{
+    console.log("mayor a 5 deberia ser azul")
+  }
+
 
   return (
     <>
     
-      <div className="container">
+      <div className={scrollPosition < 2 ? "container" : "container2"}>
         <div className="box1">
           <div className="flex">
             <h4 className="test bio">Hello</h4>
