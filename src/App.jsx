@@ -56,7 +56,7 @@ function App() {
             </div>
           </div>
           <div className="flex top-margin">
-            <div className=" under-border">
+            <div className={scrollPosition < 2 ?"under-border" : "under-border-red"}>
               <h3 className="test2">Contact me</h3>
               <img src={email} className="hand-image"></img>
             </div>

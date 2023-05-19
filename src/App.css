@@ -83,6 +83,21 @@ height: 70vh;
   height: 100%;
 }
 
+.under-border-red{
+  border-bottom: 3px solid red;
+  display: flex;
+}
+.under-border-red:hover{
+  background-color: red;
+  color: white;
+  height: 20px;
+  padding: 10px;
+  transition: height 0.3s ease-in-out;
+  cursor: pointer;
+}
+.under-border-red:hover::before {
+  height: 100%;
+}
 
 
 

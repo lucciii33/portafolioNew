@@ -27,6 +27,9 @@ border-radius: 30px;
 .max-width{
     max-width: 600px;
 }
+.separation{
+    padding-top: 40px;
+}
 @media(max-width:1190px){
     .workCard-image{
         width: 900px;
@@ -84,6 +87,20 @@ border-radius: 30px;
         padding-left: 40px;
     }
 }
+@media(max-width:640px){
+    .workCard-image {
+    width: 387px;
+    height: 354px;
+    background-color: white;
+    border-radius: 30px;
+    display: block;
+    margin: auto;
+}
+.max-width {
+    max-width: 430px;
+}
+}
+
 @media(max-width: 450px){
     .flex-2{
         display: block;
@@ -102,6 +119,9 @@ border-radius: 30px;
         .padding-letters{
             padding: 30px;
         }
+        .separation {
+    margin-right: -2px;
+}
 }
 
 
@@ -110,9 +130,7 @@ border-radius: 30px;
     font-size: 18px;
     font-family: 'Nunito', sans-serif;
   }
-.separation{
-    padding-top: 40px;
-}
+
 .bold{
 font-weight: bold !important;
 }
