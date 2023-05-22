@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import arrow2 from "../assets/arrow2.png"
 
 import "../projects.css";
@@ -11,13 +11,39 @@ function WorkCard({
   link,
   frontend,
   backend,
-  scrollPosition
+  scrollPosition,
+
 }) {
+
+  const prevScrollY = useRef(0);
+
+  const [goingUp, setGoingUp] = useState(false);
+  console.log("goingUp", goingUp)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      if (prevScrollY.current < currentScrollY && !goingUp) {
+        setGoingUp(true);
+      }
+      if (prevScrollY.current > currentScrollY && goingUp) {
+        setGoingUp(false);
+      }
+
+      prevScrollY.current = currentScrollY;
+      console.log(goingUp, currentScrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [goingUp]);
+  
   return (
     <>
-      <div className="separation">
+      <div className="separation" id="animatedText">
         <div className="padding-letters">
-          <h2>{title}</h2>
+          <h2 className="">{title}</h2>
           <p className="text1">{description}</p>
         </div>
 

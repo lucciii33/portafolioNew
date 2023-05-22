@@ -146,3 +146,12 @@ font-weight: bold !important;
     color: #008080;
     text-decoration: none;
 }
+
+.animated-letter {
+    opacity: 0;
+    transition: opacity 1s;
+  }
+  
+  .letter-appear {
+    opacity: 1;
+  }
