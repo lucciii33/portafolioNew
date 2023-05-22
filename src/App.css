@@ -3,7 +3,7 @@
 
 
 .container{
-  border: 20px solid blue;
+  border: 20px solid #4169E1;
   height: 100vh; /* Adjust the height as needed */
   width: 100%; /* Adjust the width as needed */
   box-sizing: border-box;
@@ -13,7 +13,7 @@
 }
 
 .container2{
-  border: 20px solid red;
+  border: 20px solid #008080;
   height: 100vh; /* Adjust the height as needed */
   width: 100%; /* Adjust the width as needed */
   box-sizing: border-box;
@@ -68,11 +68,11 @@ height: 70vh;
 }
 
 .under-border{
-  border-bottom: 3px solid blue;
+  border-bottom: 3px solid #4169E1;
   display: flex;
 }
 .under-border:hover{
-  background-color: blue;
+  background-color: #4169E1;
   color: white;
   height: 20px;
   padding: 10px;
@@ -84,11 +84,11 @@ height: 70vh;
 }
 
 .under-border-red{
-  border-bottom: 3px solid red;
+  border-bottom: 3px solid #008080;
   display: flex;
 }
 .under-border-red:hover{
-  background-color: red;
+  background-color: #008080;
   color: white;
   height: 20px;
   padding: 10px;
@@ -110,11 +110,12 @@ height: 70vh;
   width: 60px;
   height: 45px;
   /* padding-left: 50px; */
+  margin-top: 7px;
 }
 .arrow-image:hover{
   width: 60px;
   height: 45px;
-  margin-top: 7px;
+  /* margin-top: 7px; */
 }
 
 
@@ -134,7 +135,21 @@ height: 70vh;
 }
 
 .circle-hover:hover{
-  background-color: blue;
+  background-color: #4169E1;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  text-align: center;
+  margin-left: 50px;
+
+}
+
+.circle-hover2{
+  margin-left: 50px;
+}
+
+.circle-hover2:hover{
+  background-color: #008080;
   width: 60px;
   height: 60px;
   border-radius: 50%;
@@ -145,4 +160,58 @@ height: 70vh;
 .max-width-banner-1{
  max-width: 560px;
  padding-left: 55px;
+}
+
+@media(max-width: 500px){
+
+
+.arrow-image{
+  width: 60px;
+  height: 45px;
+  /* padding-left: 50px; */
+  margin-top: 67px;
+}
+.arrow-image:hover{
+  width: 60px;
+  height: 45px;
+  /* margin-top: 7px; */
+}
+
+.circle-hover{
+  margin-left: 50px;
+  margin-top: 67px;
+ 
+}
+
+.circle-hover:hover{
+  background-color: #4169E1;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  text-align: center;
+  margin-left: 50px;
+
+}
+
+.circle-hover2{
+  margin-left: 50px;
+
+}
+
+.box2 {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  padding-bottom: 46px;
+}
+.circle-hover2:hover{
+  background-color: #008080;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  text-align: center;
+  margin-left: 50px;
+
+}
+
 }

@@ -8,16 +8,16 @@ import viteLogo from "/vite.svg";
 import "./projects.css";
 import WorkCard from "./components/workCard";
 
-function Projects() {
+function Projects({scrollPosition}) {
 
 
   return (
     <>
       <div className="projects-main" id="projects-main">
         <div>
-        <WorkCard title={"Blue Medical"} description={"A medical Software to help tracking patiens"} time={"12 Months"} frontend={"React.js, Bootstrap, MDBootstrap, Redux"} backend={"Express.js, node.js, mongoDB"} mockup1={mockup2} link={"https://www.bluelighttech.co"}/>
-        <WorkCard title={"Elana"} description={"Line5 a finacial services the best option to loan your home"} time={"4 month"}frontend={"Next.js, ChakraUI, Redux"} backend={"Express.js, node.js, mongoDB"}  mockup1={mockup1} link={"https://staging-site-elana.netlify.app"}/>
-        <WorkCard title={"Elana"} description={"Line5 a finacial services the best option to loan your home"} time={"4 month"}frontend={"Next.js, ChakraUI, Redux"} backend={"Express.js, node.js, mongoDB"}  mockup1={mockup1} link={"https://staging-site-elana.netlify.app"}/>
+        <WorkCard title={"Blue Medical"} description={"A medical Software to help tracking patiens"} time={"12 Months"} frontend={"React.js, Bootstrap, MDBootstrap, Redux"} backend={"Express.js, node.js, mongoDB"} mockup1={mockup2} link={"https://www.bluelighttech.co"} scrollPosition={scrollPosition}/>
+        <WorkCard title={"Elana"} description={"Line5 a finacial services the best option to loan your home"} time={"4 month"}frontend={"Next.js, ChakraUI, Redux"} backend={"Express.js, node.js, mongoDB"}  mockup1={mockup1} link={"https://staging-site-elana.netlify.app"} scrollPosition={scrollPosition}/>
+        <WorkCard title={"Elana"} description={"Line5 a finacial services the best option to loan your home"} time={"4 month"}frontend={"Next.js, ChakraUI, Redux"} backend={"Express.js, node.js, mongoDB"}  mockup1={mockup1} link={"https://staging-site-elana.netlify.app"} scrollPosition={scrollPosition}/>
         </div>
     
       </div>

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import arrow2 from "../assets/arrow2.png"
 
 import "../projects.css";
 
@@ -10,6 +11,7 @@ function WorkCard({
   link,
   frontend,
   backend,
+  scrollPosition
 }) {
   return (
     <>
@@ -47,8 +49,8 @@ function WorkCard({
               reprehenderit in voluptate velit esse cillum dolore eu fugiat
               nulla pariatur.{" "}
             </p>
-            <a href={link} target="_blank">
-              check project
+            <a href={link} target="_blank" className={scrollPosition < 2 ? "linkProject" : "linkProject2"}>
+              check project<img src={arrow2} className="arrow2"></img>
             </a>
           </div>
         </div>

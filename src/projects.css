@@ -1,5 +1,5 @@
 .projects-main{
-    background-color: #F3F0F0;
+    background-color: #FFFEFE;
     width: 100%;
     height: auto;
     display: flex;
@@ -133,4 +133,16 @@ border-radius: 30px;
 
 .bold{
 font-weight: bold !important;
+}
+.arrow2{
+    width: 40px ;
+    
+}
+.linkProject{
+    color: #4169E1;
+    text-decoration: none;
+}
+.linkProject2{
+    color: #008080;
+    text-decoration: none;
 }

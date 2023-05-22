@@ -64,12 +64,12 @@ function App() {
         </div>
 
         <div className="box2">
-          <div className="circle-hover">
+          <div className={scrollPosition<2 ? "circle-hover" : "circle-hover2"}>
           <a href='#projects-main'><img src={arrow} className="arrow-image"></img></a>
           </div>
         </div>
-        <Projects/>
-        <CoffeBanner/>
+        <Projects scrollPosition={scrollPosition}/>
+        <CoffeBanner scrollPosition={scrollPosition}/>
       </div>
     </>
   );

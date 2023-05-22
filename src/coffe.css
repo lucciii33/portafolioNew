@@ -9,7 +9,7 @@
     height: 350px;
     padding: 80px;
     padding-top: 150px;
-    background-color: beige;
+    background-color: #E4E2E2;
 }
 .separation{
     margin-right: 10px;
@@ -24,7 +24,7 @@
 
   .a_tag-decoration {
     position: relative;
-    text-decoration-color: blue ;
+    text-decoration-color: #4169E1 ;
     color: black;
     z-index: 1;
   }
@@ -36,7 +36,7 @@
     bottom: 0;
     width: 100%;
     height: 0;
-    background-color: blue;
+    background-color: #4169E1;
     transition: height 0.3s ease-in-out;
     z-index: -1; 
   }
@@ -47,30 +47,33 @@
   }
 
 
-  .a_tag-decoration {
+  .a_tag-decoration2 {
     position: relative;
-    text-decoration-color: red ;
+    text-decoration-color: #008080 ;
     color: black;
     z-index: 1;
   }
   
-  .a_tag-decoration::before {
+  .a_tag-decoration2::before {
     content: "";
     position: absolute;
     left: 0;
     bottom: 0;
     width: 100%;
     height: 0;
-    background-color: red;
+    background-color: #008080;
     transition: height 0.3s ease-in-out;
     z-index: -1; 
   }
 
   
-  .a_tag-decoration:hover::before {
+  .a_tag-decoration2:hover::before {
     height: 100%;
   }
 
+  .d-mobile{
+    display: none;
+  }
   @media(max-width:450px){
     .container-coffe {
       width: 100%;
@@ -78,5 +81,8 @@
       padding: 30px;
       padding-top: 103px;
       background-color: beige;
+  }
+  .d-mobile{
+    display: block;
   }
   }
