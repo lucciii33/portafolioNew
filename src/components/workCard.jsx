@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import arrow2 from "../assets/arrow2.png"
+import {arrow2} from "../assets/arrow2.png"
 
 import "../projects.css";
 
