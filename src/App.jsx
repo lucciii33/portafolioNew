@@ -6,6 +6,7 @@ import viteLogo from "/vite.svg";
 import "./App.css";
 import Projects from "./projects"
 import CoffeBanner from "./components/coffeBanner";
+import TitleChange from "./components/TitleChange";
 
 function App() {
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -70,6 +71,7 @@ function App() {
         </div>
         <Projects scrollPosition={scrollPosition}/>
         <CoffeBanner scrollPosition={scrollPosition}/>
+        <TitleChange/>
       </div>
     </>
   );
