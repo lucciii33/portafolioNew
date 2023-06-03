@@ -15,36 +15,42 @@ function WorkCard({
 
 }) {
 
-  const prevScrollY = useRef(0);
-
-  const [goingUp, setGoingUp] = useState(false);
-  console.log("goingUp", goingUp)
+  const boxesRef = useRef([]);
 
   useEffect(() => {
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      if (prevScrollY.current < currentScrollY && !goingUp) {
-        setGoingUp(true);
-      }
-      if (prevScrollY.current > currentScrollY && goingUp) {
-        setGoingUp(false);
-      }
-
-      prevScrollY.current = currentScrollY;
-      console.log(goingUp, currentScrollY);
+    const handleIntersection = (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate');
+        } else {
+          entry.target.classList.remove('animate');
+        }
+      });
     };
 
-    window.addEventListener("scroll", handleScroll, { passive: true });
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.8,
+    };
 
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [goingUp]);
+    const observer = new IntersectionObserver(handleIntersection, observerOptions);
+
+    boxesRef.current.forEach((box) => {
+      observer.observe(box);
+    });
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
   
   return (
     <>
       <div className="separation" id="animatedText">
         <div className="padding-letters">
-          <h2 className="">{title}</h2>
-          <p className="text1">{description}</p>
+          <h2 className="pa" ref={(el) => (boxesRef.current[0] = el)} >{title}</h2>
+          <p className="text1 pa" ref={(el) => (boxesRef.current[1] = el)}>{description}</p>
         </div>
 
         <div className="workCard-image">
@@ -53,20 +59,20 @@ function WorkCard({
 
         <div className="flex-2">
           <div>
-            <h2>timeline</h2>
-            <p className="text1">{time}</p>
-            <h2>Lenguajes</h2>
-            <p className="text1">
-              <span className="bold">frontend: </span>
+            <h2 classname="pa"ref={(el) => (boxesRef.current[2] = el)}>timeline</h2>
+            <p className="text1 pa" ref={(el) => (boxesRef.current[3] = el)}>{time}</p>
+            <h2 ref={(el) => (boxesRef.current[4] = el)}>Lenguajes</h2>
+            <p className="text1 pa m-test" ref={(el) => (boxesRef.current[5] = el)}>
+              <span className="bold pa">frontend: </span>
               {frontend} <br />
-              <span  className="bold">backend: </span>
+              <span  className="bold pa" >backend: </span>
               {backend}
             </p>
           </div>
 
           <div className="max-width">
-            <h2>overview</h2>
-            <p className="text1">
+            <h2 ref={(el) => (boxesRef.current[6] = el)}>overview</h2>
+            <p className="text1 pa" ref={(el) => (boxesRef.current[7] = el)}>
               {" "}
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
@@ -75,7 +81,7 @@ function WorkCard({
               reprehenderit in voluptate velit esse cillum dolore eu fugiat
               nulla pariatur.{" "}
             </p>
-            <a href={link} target="_blank" className={scrollPosition < 2 ? "linkProject" : "linkProject2"}>
+            <a href={link} target="_blank" className={scrollPosition < 2 ? "linkProject pa" : "linkProject2 pa"} ref={(el) => (boxesRef.current[8] = el)}>
               check project<img src={arrow2} className="arrow2"></img>
             </a>
           </div>

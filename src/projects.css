@@ -155,3 +155,18 @@ font-weight: bold !important;
   .letter-appear {
     opacity: 1;
   }
+
+  .pa{
+    opacity: 0;
+    transition: opacity 0.5s;
+    visibility: hidden;
+  }
+
+  .animate {
+    opacity: 1 !important;
+    visibility: hidden;
+    visibility: visible;
+  }
+  .m-test{
+    margin-left: -80px;
+  }
