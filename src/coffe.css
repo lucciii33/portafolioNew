@@ -104,8 +104,15 @@
   }
 
   .frame{
-    margin-top: 40px;
+    margin-top: 10px;
     margin-left: 20px;
     margin-bottom: 20px;
   
+  }
+
+  .xelement{
+    display: flex;
+    justify-content:flex-end;
+    padding: 10px;
+    margin-left: 15px;
   }
