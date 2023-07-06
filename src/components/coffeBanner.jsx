@@ -5,6 +5,9 @@ import "../coffe.css";
 
 function CoffeBanner({scrollPosition}) {
 
+  const [popUp, setPopUp] = useState(false)
+  const videoUrl = `https://www.youtube.com/watch?v=M_iCO6DV0_c`;
+
   const boxesRef = useRef([]);
 
   useEffect(() => {
@@ -46,6 +49,20 @@ function CoffeBanner({scrollPosition}) {
        
         <a href="https://github.com/lucciii33" target="_blank"  className={scrollPosition < 2 ? "a_tag-decoration pa" : "a_tag-decoration2 pa"} ref={(el) => (boxesRef.current[2] = el)}><span className="separation">Github</span></a>
         <a href="https://www.linkedin.com/in/angelomaiele/" target="_blank" className={scrollPosition < 2 ? "a_tag-decoration pa" : "a_tag-decoration2 pa"} ref={(el) => (boxesRef.current[3] = el)}><span>Linkedin</span></a>
+        <p onClick={() => setPopUp(!popUp)}>Last news</p>
+
+        {popUp ? <div className="popup">
+          <div className="modal">
+          <iframe
+          className="frame"
+        title="YouTube video player"
+        width="560"
+        height="350"
+        src={videoUrl}
+        allowFullScreen
+      ></iframe>
+          </div>
+        </div> : ""}
       </div>
     </>
   );

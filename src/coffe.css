@@ -86,3 +86,26 @@
     display: block;
   }
   }
+
+  .popup{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+  .modal{
+    background-color: aliceblue;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 8px 10px rgba(0, 0, 0, 0.1);
+    width: 600px;
+    height: 420px;
+    margin-top: -300px;
+    margin-left: 100px;
+    
+  }
+
+  .frame{
+    margin-top: 40px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+  
+  }
