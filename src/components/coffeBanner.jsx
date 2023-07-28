@@ -52,8 +52,7 @@ function CoffeBanner({ scrollPosition }) {
           want to see more work?
           <br className="d-mobile" /> talk about code?
           <br />
-          tell me all about the <br className="d-mobile" />
-          latest conspiracy theories?
+          Curious about the intriguing history <br className="d-mobile" /> behind my journey into coding? 
         </p>
 
         <a
@@ -76,19 +75,24 @@ function CoffeBanner({ scrollPosition }) {
         >
           <span>Linkedin</span>
         </a>
-        <p onClick={() => setPopUp(!popUp)}>Last news</p>
+        <p  className="LastNews" onClick={() => setPopUp(!popUp)}>Last news</p>
 
         {popUp ? (
-          <div className="popup">
-            
-            <div className="modal">
-            <div className="xelement" onClick={() => setPopUp(false)}>X</div>
-              <ReactPlayer url={videoUrl} />
-            </div>
-          </div>
-        ) : (
-          ""
-        )}
+  <>
+    <div className="overlay" onClick={() => setPopUp(false)}></div>
+    <div className="popup">
+      <div className="modal">
+        <div>
+          <div className="xelement" onClick={() => setPopUp(false)}>X</div>
+          <ReactPlayer url={videoUrl} />
+          <p className="p-4">This app has been made with ReactJs, Redux, Bootstrap for the front end and Ruby for the backend</p>
+        </div>
+      </div>
+    </div>
+  </>
+) : (
+  ""
+)}
       </div>
     </>
   );

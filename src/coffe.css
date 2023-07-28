@@ -92,17 +92,30 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    position: relative; /* Set the position to relative to create a new stacking context */
+    z-index: 1001;
+    
   }
   .modal{
     background-color: aliceblue;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 8px 10px rgba(0, 0, 0, 0.1);
-    width: 600px;
-    height: 420px;
-    margin-top: -300px;
+    width: 750px;
+    height: 501px;
+    margin-top: -380px;
     margin-left: 100px;
-    
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
-
+.overlay {
+  position: fixed; /* Position the overlay fixed to cover the entire viewport */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* Adjust the opacity here (0.6 = 60%) */
+  z-index: 1000; 
+}
   .frame{
     margin-top: 10px;
     margin-left: 20px;
@@ -115,4 +128,7 @@
     justify-content:flex-end;
     padding: 10px;
     margin-left: 15px;
+  }
+  .LastNews{
+    cursor: pointer;
   }

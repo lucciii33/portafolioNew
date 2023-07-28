@@ -43,24 +43,18 @@ function App() {
           <div className="">
             <div className="max-width-banner-1">
               <p className="text1">
-                I'm Angelo Maiele, a Miami-based software enginer. Most recently
-                at Line5 and blueLightTech, I'm weirdly passionate
-                about both design systems and trust & safety matters. And as
-                someone with a multidisciplinary background, I love bringing
-                different philosophies into the design process.
+                I'm Angelo Maiele, a Miami-based software engineer with 3+ years of experience, specializing in full-stack development and UI/UX design. Proficient in <span className="text-bold"> HTML, CSS, JavaScript, React.js, Next.js, Node.js, Python, Ruby, and Rails </span>, I create seamless user experiences for complex systems. My expertise also includes databases like <span className="text-bold">PostgreSQL and MongoDB </span>, and softwares like <span className="text-bold">photoshop, figma and ilustrator</span>. 
               </p>
               <p className="text1">
-                I like working with products I care about, where teams are
-                diverse, people are excited about solving problems, and the
-                coffee is good.
+              With dual degrees in Computer Science and Hospitality Management, I excel in organizing teams and managing clients effectively. Explore my portfolio to witness the impactful projects I've delivered.
               </p>
             </div>
           </div>
-          <div className="flex top-margin">
-            <div className={scrollPosition < 2 ?"under-border" : "under-border-red"}>
+          <div className="flex top-margin no-decoration">
+            <a className={scrollPosition < 2 ?"under-border no-decoration" : "under-border-red no-decoration"} href="https://www.linkedin.com/in/angelo-maiele-68626333/details/experience/" target="_blank">
               <h3 className="test2">Contact me</h3>
               <img src={email} className="hand-image"></img>
-            </div>
+            </a>
           </div>
         </div>
 

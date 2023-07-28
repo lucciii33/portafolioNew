@@ -53,6 +53,8 @@ height: 70vh;
   margin: 0px;
   margin-right: 10px;
   font-family: 'Open Sans', sans-serif;
+  text-decoration: none;
+  color: black;
 
   
 }
@@ -213,5 +215,17 @@ height: 70vh;
   margin-left: 50px;
 
 }
+
+}
+
+.text-bold{
+font-weight: bolder;
+text-decoration: underline;
+}
+.p-4{
+  padding: 20px;
+}
+.no-decoration{
+  text-decoration: none;
 
 }
