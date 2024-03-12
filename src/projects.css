@@ -95,6 +95,7 @@ border-radius: 30px;
     border-radius: 30px;
     display: block;
     margin: auto;
+    object-fit: cover;
 }
 .max-width {
     max-width: 430px;
@@ -129,7 +130,7 @@ border-radius: 30px;
     text-align: left;
     font-size: 18px;
     font-family: 'Nunito', sans-serif;
-  }
+}
 
 .bold{
 font-weight: bold !important;
@@ -168,5 +169,17 @@ font-weight: bold !important;
     visibility: visible;
   }
   .m-test{
-    margin-left: -80px;
+    margin-left: -60px;
   }
+  @media(max-width: 700px) {
+    .max-width-banner-1 {
+      max-width: 560px;
+      padding-left: 30px;
+    }
+    
+    .text1 {
+      font-size: 14px; /* This sets a large font size of 5rem */
+      color: rgb(0, 0, 0);
+    }
+  }
+  
