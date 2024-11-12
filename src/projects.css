@@ -1,94 +1,90 @@
-.projects-main{
-    background-color: #FFFEFE;
-    width: 100%;
-    height: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-bottom: 40px;
+.projects-main {
+  background-color: #fffefe;
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 40px;
 }
-.margin-auto{
+.margin-auto {
+  margin: auto;
+}
+
+.workCard-image {
+  width: 1000px;
+  height: 600px;
+  background-color: white;
+  border-radius: 30px;
+}
+.flex-2 {
+  display: flex;
+}
+.padding-letters {
+  padding: 0px;
+}
+.max-width {
+  max-width: 600px;
+}
+.separation {
+  padding-top: 40px;
+}
+@media (max-width: 1190px) {
+  .workCard-image {
+    width: 900px;
+    height: 500px;
+    background-color: white;
+    border-radius: 30px;
+    display: block;
     margin: auto;
+  }
+  .padding-letters {
+    padding-left: 15px;
+  }
+  .max-width {
+    max-width: 500px;
+  }
 }
-
-.workCard-image{
-width: 1000px;
-height: 600px;
-background-color: white;
-border-radius: 30px;
-}
-.flex-2{
-    display: flex;
-    justify-content: space-around;
-}
-.padding-letters{
-    padding: 0px;
-}
-.max-width{
-    max-width: 600px;
-}
-.separation{
-    padding-top: 40px;
-}
-@media(max-width:1190px){
-    .workCard-image{
-        width: 900px;
-        height: 500px;
-        background-color: white;
-        border-radius: 30px;
-        display: block;
+@media (max-width: 1050px) {
+  .workCard-image {
+    width: 732px;
+    height: 470px;
+    background-color: white;
+    border-radius: 30px;
+    display: block;
     margin: auto;
-    
-        }
-        .padding-letters{
-            padding-left: 15px;
-        }
-        .max-width {
-            max-width: 500px;
-        }
-
+  }
+  .flex-2 {
+    display: block;
+    padding: 30px;
+  }
 }
-@media(max-width: 1050px){
-    .workCard-image {
-        width: 732px;
-        height: 470px;
-        background-color: white;
-        border-radius: 30px;
-        display: block;
-        margin: auto;
-    }
-    .flex-2{
-        display: block;
-        padding: 30px;
-        
-    }
-}
-@media(max-width: 900px) {
-    .workCard-image {
-        width: 628px;
-        height: 441px;
-        background-color: white;
-        border-radius: 30px;
-        display: block;
-        margin: auto;
-    }
+@media (max-width: 900px) {
+  .workCard-image {
+    width: 628px;
+    height: 441px;
+    background-color: white;
+    border-radius: 30px;
+    display: block;
+    margin: auto;
+  }
 }
 
-@media(max-width:752px){
-    .workCard-image {
-        width: 509px;
-        height: 441px;
-        background-color: white;
-        border-radius: 30px;
-        display: block;
-        margin: auto;
-    }
-    .padding-letters {
-        padding-left: 40px;
-    }
+@media (max-width: 752px) {
+  .workCard-image {
+    width: 509px;
+    height: 441px;
+    background-color: white;
+    border-radius: 30px;
+    display: block;
+    margin: auto;
+  }
+  .padding-letters {
+    padding-left: 40px;
+  }
 }
-@media(max-width:640px){
-    .workCard-image {
+@media (max-width: 640px) {
+  .workCard-image {
     width: 387px;
     height: 354px;
     background-color: white;
@@ -96,90 +92,95 @@ border-radius: 30px;
     display: block;
     margin: auto;
     object-fit: cover;
-}
-.max-width {
+  }
+  .max-width {
     max-width: 430px;
-}
+  }
 }
 
-@media(max-width: 450px){
-    .flex-2{
-        display: block;
-        padding: 30px;
-        
-    }
-    .workCard-image{
-        width: 301px;
-        height: 301px;
-        background-color: white;
-        border-radius: 30px;
-        display: block;
+@media (max-width: 450px) {
+  .flex-2 {
+    display: block;
+    padding: 30px;
+  }
+  .workCard-image {
+    width: 301px;
+    height: 301px;
+    background-color: white;
+    border-radius: 30px;
+    display: block;
     margin: auto;
-    
-        }
-        .padding-letters{
-            padding: 30px;
-        }
-        .separation {
+  }
+  .padding-letters {
+    padding: 30px;
+  }
+  .separation {
     margin-right: -2px;
-}
-}
-
-
-.text1{
-    text-align: left;
-    font-size: 18px;
-    font-family: 'Nunito', sans-serif;
+  }
 }
 
-.bold{
-font-weight: bold !important;
+.text1 {
+  text-align: left;
+  font-size: 18px;
+  font-family: "Nunito", sans-serif;
 }
-.arrow2{
-    width: 40px ;
-    
+
+.bold {
+  font-weight: bold !important;
 }
-.linkProject{
-    color: #4169E1;
-    text-decoration: none;
+.arrow2 {
+  width: 40px;
 }
-.linkProject2{
-    color: #008080;
-    text-decoration: none;
+.linkProject {
+  color: #4169e1;
+  text-decoration: none;
+}
+.linkProject2 {
+  color: #008080;
+  text-decoration: none;
 }
 
 .animated-letter {
-    opacity: 0;
-    transition: opacity 1s;
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+.letter-appear {
+  opacity: 1;
+}
+
+.pa {
+  opacity: 0;
+  transition: opacity 0.5s;
+  visibility: hidden;
+}
+
+.animate {
+  opacity: 1 !important;
+  visibility: hidden;
+  visibility: visible;
+}
+.m-test {
+  margin-left: -70px;
+}
+
+.mar-left {
+  margin-left: 100px;
+}
+
+@media (max-width: 1050px) {
+  .mar-left {
+    margin-left: 0px;
   }
-  
-  .letter-appear {
-    opacity: 1;
+}
+@media (max-width: 700px) {
+  .max-width-banner-1 {
+    max-width: 560px;
+    padding-left: 30px;
   }
 
-  .pa{
-    opacity: 0;
-    transition: opacity 0.5s;
-    visibility: hidden;
+  .text1 {
+    font-size: 14px; /* This sets a large font size of 5rem */
+    color: rgb(0, 0, 0);
   }
-
-  .animate {
-    opacity: 1 !important;
-    visibility: hidden;
-    visibility: visible;
-  }
-  .m-test{
-    margin-left: -60px;
-  }
-  @media(max-width: 700px) {
-    .max-width-banner-1 {
-      max-width: 560px;
-      padding-left: 30px;
-    }
-    
-    .text1 {
-      font-size: 14px; /* This sets a large font size of 5rem */
-      color: rgb(0, 0, 0);
-    }
-  }
-  
+}
