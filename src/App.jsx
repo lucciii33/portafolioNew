@@ -11,7 +11,8 @@ import { IoSunnyOutline, IoMoonOutline } from "react-icons/io5";
 function App() {
   const [scrollPosition, setScrollPosition] = useState(0);
   const [theme, setTheme] = useState(false);
-  console.log("theme", theme);
+  const [lenguaje, setLenguaje] = useState("en");
+  console.log("lenguaje", lenguaje);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -33,6 +34,10 @@ function App() {
 
   const changeTheme = () => {
     setTheme(!theme);
+  };
+
+  const changeLenguaje = () => {
+    setLenguaje((prev) => (prev === "en" ? "es" : "en"));
   };
 
   return (
@@ -64,6 +69,35 @@ function App() {
                   className="icon-size-white"
                   onClick={changeTheme}
                 />
+              )}
+            </div>
+          </div>
+          <div className="">
+            <div
+              className={
+                !theme
+                  ? "circle-icon flex-center-ali"
+                  : "circle-icon-dark-them flex-center-ali"
+              }
+            >
+              {lenguaje === "en" ? (
+                <span
+                  className="icon-size"
+                  onClick={changeLenguaje}
+                  role="img"
+                  aria-label="USA"
+                >
+                  🇺🇸
+                </span>
+              ) : (
+                <span
+                  className="icon-size-white"
+                  onClick={changeLenguaje}
+                  role="img"
+                  aria-label="Spain"
+                >
+                  🇪🇸
+                </span>
               )}
             </div>
           </div>
