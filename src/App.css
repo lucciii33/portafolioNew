@@ -6,7 +6,7 @@
   height: 100vh; /* Adjust the height as needed */
   width: 100%; /* Adjust the width as needed */
   box-sizing: border-box;
-  padding-top: 50px;
+  padding-top: 30px;
   overflow: scroll;
   background-color: aliceblue;
 }
@@ -16,9 +16,29 @@
   height: 100vh; /* Adjust the height as needed */
   width: 100%; /* Adjust the width as needed */
   box-sizing: border-box;
-  padding-top: 50px;
+  padding-top: 30px;
   overflow: scroll;
   background-color: aliceblue;
+}
+
+.container-dark-them {
+  border: 20px solid #242425;
+  height: 100vh;
+  width: 100%;
+  box-sizing: border-box;
+  padding-top: 30px;
+  overflow: scroll;
+  background-color: #343333;
+}
+
+.container-2-dark-them {
+  border: 20px solid #080814;
+  height: 100vh;
+  width: 100%;
+  box-sizing: border-box;
+  padding-top: 30px;
+  overflow: scroll;
+  background-color: #343333;
 }
 
 .d-flex-center {
@@ -27,10 +47,56 @@
   flex-direction: column;
 }
 
+.flex-center-ali {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle-icon {
+  background-color: rgb(249, 249, 249);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1),
+    0 16px 32px rgba(0, 0, 0, 0.1), 0 32px 64px rgba(0, 0, 0, 0.1);
+}
+
+.circle-icon-dark-them {
+  background-color: #242425;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1),
+    0 16px 32px rgba(0, 0, 0, 0.1), 0 32px 64px rgba(0, 0, 0, 0.1);
+}
+
+.icon-size {
+  font-size: 20px;
+  color: black;
+}
+
+.color-text-dark {
+  color: #242425 !important;
+}
+
+.color-text-white {
+  color: #e1e1e1 !important;
+}
+
+.icon-size-white {
+  font-size: 20px;
+  color: rgb(255, 255, 255);
+}
+
 .box1 {
   height: 70vh;
 }
-
+.rigth-position {
+  display: flex;
+  justify-content: end;
+  padding-right: 30px;
+}
 .bio {
   font-size: 24px;
   line-height: 40px;
@@ -168,7 +234,6 @@
 
   .text1 {
     font-size: 14px; /* This sets a large font size of 5rem */
-    color: rgb(0, 0, 0);
   }
 }
 

@@ -7,6 +7,17 @@
   align-items: center;
   padding-bottom: 40px;
 }
+
+.projects-main-dark {
+  background-color: #474545;
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 40px;
+}
+
 .margin-auto {
   margin: auto;
 }
@@ -115,7 +126,7 @@
     padding: 30px;
   }
   .separation {
-    margin-right: -2px;
+    margin-right: 0px;
   }
 }
 
@@ -181,6 +192,5 @@
 
   .text1 {
     font-size: 14px; /* This sets a large font size of 5rem */
-    color: rgb(0, 0, 0);
   }
 }

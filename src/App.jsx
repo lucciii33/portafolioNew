@@ -6,10 +6,12 @@ import "./App.css";
 import Projects from "./projects";
 import CoffeBanner from "./components/coffeBanner";
 import TitleChange from "./components/TitleChange";
+import { IoSunnyOutline, IoMoonOutline } from "react-icons/io5";
 
 function App() {
   const [scrollPosition, setScrollPosition] = useState(0);
-  console.log(scrollPosition);
+  const [theme, setTheme] = useState(false);
+  console.log("theme", theme);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -29,17 +31,63 @@ function App() {
     console.log("mayor a 5 deberia ser azul");
   }
 
+  const changeTheme = () => {
+    setTheme(!theme);
+  };
+
   return (
     <>
-      <div className={scrollPosition < 2 ? "container" : "container2"}>
+      <div
+        className={
+          scrollPosition < 2
+            ? theme
+              ? "container-dark-them"
+              : "container"
+            : theme
+            ? "container-2-dark-them"
+            : "container2"
+        }
+      >
+        <div className="rigth-position">
+          <div className="">
+            <div
+              className={
+                !theme
+                  ? "circle-icon flex-center-ali"
+                  : "circle-icon-dark-them flex-center-ali"
+              }
+            >
+              {!theme ? (
+                <IoSunnyOutline className="icon-size" onClick={changeTheme} />
+              ) : (
+                <IoMoonOutline
+                  className="icon-size-white"
+                  onClick={changeTheme}
+                />
+              )}
+            </div>
+          </div>
+        </div>
         <div className="box1">
           <div className="flex">
-            <h4 className="test bio">Hello</h4>
+            <h4
+              className={
+                !theme
+                  ? "test bio color-text-dark"
+                  : "test bio color-text-white"
+              }
+            >
+              Hello
+            </h4>
             <img src={hand} className="hand-image"></img>
           </div>
           <div className="">
             <div className="max-width-banner-1">
-              <p className="text1">
+              <p
+                className={
+                  !theme ? "text1 color-text-dark" : "text1 color-text-white"
+                }
+              >
                 I'm Angelo Maiele, a Miami-based software engineer with 3+ years
                 of experience, specializing in full-stack development and UI/UX
                 design. Proficient in{" "}
@@ -57,7 +105,11 @@ function App() {
                 </span>
                 .
               </p>
-              <p className="text1">
+              <p
+                className={
+                  !theme ? "text1 color-text-dark" : "text1 color-text-white"
+                }
+              >
                 With dual degrees in Computer Science and Hospitality
                 Management, I excel in organizing teams and managing clients
                 effectively. Explore my portfolio to witness the impactful
@@ -76,7 +128,13 @@ function App() {
               target="_blank"
               rel="noreferrer"
             >
-              <h3 className="test2">Contact me</h3>
+              <h3
+                className={
+                  !theme ? "test2 color-text-dark" : "test2 color-text-white"
+                }
+              >
+                Contact me
+              </h3>
               <img src={email} className="hand-image"></img>
             </a>
           </div>
@@ -91,8 +149,8 @@ function App() {
             </a>
           </div>
         </div>
-        <Projects scrollPosition={scrollPosition} />
-        <CoffeBanner scrollPosition={scrollPosition} />
+        <Projects scrollPosition={scrollPosition} theme={theme} />
+        <CoffeBanner scrollPosition={scrollPosition} theme={theme} />
         <TitleChange />
       </div>
     </>

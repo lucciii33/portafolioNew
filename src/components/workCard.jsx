@@ -12,6 +12,7 @@ function WorkCard({
   frontend,
   backend,
   scrollPosition,
+  theme,
 }) {
   const boxesRef = useRef([]);
 
@@ -46,9 +47,18 @@ function WorkCard({
     };
   }, []);
 
+  console.log("themeeee from card", theme);
+
   return (
     <>
-      <div className="separation margin-auto" id="animatedText">
+      <div
+        className={
+          theme
+            ? "separation margin-auto color-text-white"
+            : "separation margin-auto color-text-dark"
+        }
+        id="animatedText"
+      >
         <div className="padding-letters">
           <h2 className="pa" ref={(el) => (boxesRef.current[0] = el)}>
             {title}

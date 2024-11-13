@@ -1,7 +1,3 @@
-import { useState, useEffect, useRef } from "react";
-import hand from "./assets/victory.png";
-import email from "./assets/email.png";
-import arrow from "./assets/arrow.png";
 import mockup1 from "./assets/BlueMedical.png";
 import mockup2 from "./assets/line5.png";
 import mockup3 from "./assets/novaai.png";
@@ -9,10 +5,13 @@ import mockup4 from "./assets/crm.png";
 import "./projects.css";
 import WorkCard from "./components/workCard";
 
-function Projects({ scrollPosition }) {
+function Projects({ scrollPosition, theme }) {
   return (
     <>
-      <div className="projects-main" id="projects-main">
+      <div
+        className={!theme ? "projects-main" : "projects-main-dark "}
+        id="projects-main"
+      >
         <div className="d-flex-center">
           <WorkCard
             title={"NOVA AI"}
@@ -25,6 +24,7 @@ function Projects({ scrollPosition }) {
             mockup1={mockup3}
             link={"https://novaaiapp.com/"}
             scrollPosition={scrollPosition}
+            theme={theme}
           />
           <WorkCard
             title={"Blue Medical"}
@@ -37,6 +37,7 @@ function Projects({ scrollPosition }) {
             mockup1={mockup1}
             link={"https://bluemedical.co"}
             scrollPosition={scrollPosition}
+            theme={theme}
           />
           <WorkCard
             title={"Line5"}
@@ -49,6 +50,7 @@ function Projects({ scrollPosition }) {
             mockup1={mockup2}
             link={"https://www.line5.com"}
             scrollPosition={scrollPosition}
+            theme={theme}
           />
 
           <WorkCard
@@ -62,6 +64,7 @@ function Projects({ scrollPosition }) {
             mockup1={mockup4}
             link={"https://crm.staging.line5.com"}
             scrollPosition={scrollPosition}
+            theme={theme}
           />
         </div>
       </div>
