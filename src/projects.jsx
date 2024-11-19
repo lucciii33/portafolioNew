@@ -4,8 +4,32 @@ import mockup3 from "./assets/novaai.png";
 import mockup4 from "./assets/crm.png";
 import "./projects.css";
 import WorkCard from "./components/workCard";
+import PropTypes from "prop-types";
 
-function Projects({ scrollPosition, theme }) {
+function Projects({ scrollPosition, theme, lenguaje }) {
+  const texts = {
+    en: {
+      novaAI:
+        "Nova AI is an artificial intelligence app designed to help students study effectively using various learning methods.",
+      blueMedical:
+        "A software that helps any branch of medicine to track their patients.",
+      line5:
+        "Line5 partners with dealerships to fully fund protection plans for vehicles and recreational assets, offering guaranteed approvals and flexible payment options that build credit. With streamlined processes and seamless platform integration, Line5 helps dealerships boost sales and profitability with ease.",
+      crm: "System that helps businesses manage interactions with current and potential customers, improving relationships, sales, and customer retention by organizing data and automating processes.",
+    },
+    es: {
+      novaAI:
+        "Nova AI es una aplicación de inteligencia artificial diseñada para ayudar a los estudiantes a estudiar de manera efectiva utilizando diversos métodos de aprendizaje.",
+      blueMedical:
+        "Un software que ayuda a cualquier rama de la medicina a realizar un seguimiento de sus pacientes.",
+      line5:
+        "Line5 colabora con concesionarios para financiar completamente planes de protección para vehículos y activos recreativos, ofreciendo aprobaciones garantizadas y opciones de pago flexibles que construyen crédito. Con procesos optimizados e integración perfecta de plataformas, Line5 ayuda a los concesionarios a aumentar las ventas y la rentabilidad con facilidad.",
+      crm: "Sistema que ayuda a las empresas a gestionar las interacciones con clientes actuales y potenciales, mejorando las relaciones, las ventas y la retención de clientes al organizar datos y automatizar procesos.",
+    },
+  };
+
+  const langTexts = texts[lenguaje] || texts.en;
+
   return (
     <>
       <div
@@ -15,9 +39,7 @@ function Projects({ scrollPosition, theme }) {
         <div className="d-flex-center">
           <WorkCard
             title={"NOVA AI"}
-            description={
-              "Nova AI is an artificial intelligence app designed to help students study effectively using various learning methods."
-            }
+            description={langTexts.novaAI}
             time={"min-12 month"}
             frontend={"React.js, Bootstrap, Redux"}
             backend={"Express.js, node.js, MongoDB, Render"}
@@ -28,9 +50,7 @@ function Projects({ scrollPosition, theme }) {
           />
           <WorkCard
             title={"Blue Medical"}
-            description={
-              "A software that helps any branch of medicine to track ther patients"
-            }
+            description={langTexts.blueMedical}
             time={"10 month"}
             frontend={"Next.js, ChakraUI, Redux"}
             backend={"Express.js, node.js, MongoDB, Render"}
@@ -41,9 +61,7 @@ function Projects({ scrollPosition, theme }) {
           />
           <WorkCard
             title={"Line5"}
-            description={
-              "Line5 partners with dealerships to fully fund protection plans for vehicles and recreational assets, offering guaranteed approvals and flexible payment options that build credit. With streamlined processes and seamless platform integration, Line5 helps dealerships boost sales and profitability with ease."
-            }
+            description={langTexts.line5}
             time={"2 years-still"}
             frontend={"React.js, Bootstrap, Ruby and Rails"}
             backend={"Ruby and Rails, AWS, Postgress"}
@@ -55,9 +73,7 @@ function Projects({ scrollPosition, theme }) {
 
           <WorkCard
             title={"line5 CRM"}
-            description={
-              "system that helps businesses manage interactions with current and potential customers, improving relationships, sales, and customer retention by organizing data and automating processes."
-            }
+            description={langTexts.crm}
             time={"5 month"}
             frontend={"React, Typescript, Remix, shadcn"}
             backend={"Ruby and Rails, Postgress, AWS"}
@@ -71,5 +87,11 @@ function Projects({ scrollPosition, theme }) {
     </>
   );
 }
+
+Projects.propTypes = {
+  scrollPosition: PropTypes.number,
+  theme: PropTypes.bool.isRequired,
+  lenguaje: PropTypes.string,
+};
 
 export default Projects;

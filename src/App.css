@@ -76,6 +76,10 @@
   color: black;
 }
 
+.mar-rig-circle {
+  margin-right: 5px;
+}
+
 .color-text-dark {
   color: #242425 !important;
 }

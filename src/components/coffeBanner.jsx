@@ -2,10 +2,11 @@
 import { useState, useEffect, useRef } from "react";
 import coffee from "../assets/coffee-mug.png";
 import ReactPlayer from "react-player";
+import PropTypes from "prop-types";
 
 import "../coffe.css";
 
-function CoffeBanner({ scrollPosition, theme }) {
+function CoffeBanner({ theme, lenguaje }) {
   const [popUp, setPopUp] = useState(false);
   const videoUrl = `https://www.youtube.com/watch?v=M_iCO6DV0_c`;
 
@@ -53,11 +54,14 @@ function CoffeBanner({ scrollPosition, theme }) {
       >
         <img src={coffee} className="coffee-img"></img>
         <h3 className="pa" ref={(el) => (boxesRef.current[0] = el)}>
-          Let's chat.
+          {lenguaje === "en" ? "Let's chat." : "Conversemos"}
         </h3>
         <p className="text1 pa" ref={(el) => (boxesRef.current[1] = el)}>
-          want to see more work?
-          <br className="d-mobile" /> talk about code?
+          {lenguaje === "en"
+            ? "want to see more work?"
+            : "Quieres ver otros trabajos?"}
+          <br className="d-mobile" />{" "}
+          {lenguaje === "en" ? "talk about code?" : "hablar sobre codigo?"}
           <br />
           Curious about the intriguing history <br className="d-mobile" />{" "}
           behind my journey into coding?
@@ -114,5 +118,10 @@ function CoffeBanner({ scrollPosition, theme }) {
     </>
   );
 }
+
+CoffeBanner.propTypes = {
+  theme: PropTypes.bool.isRequired,
+  lenguaje: PropTypes.string,
+};
 
 export default CoffeBanner;

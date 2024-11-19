@@ -53,8 +53,8 @@ function App() {
             : "container2"
         }
       >
-        <div className="rigth-position">
-          <div className="">
+        <div className="rigth-position ">
+          <div className="mar-rig-circle">
             <div
               className={
                 !theme
@@ -122,9 +122,9 @@ function App() {
                   !theme ? "text1 color-text-dark" : "text1 color-text-white"
                 }
               >
-                I'm Angelo Maiele, a Miami-based software engineer with 3+ years
-                of experience, specializing in full-stack development and UI/UX
-                design. Proficient in{" "}
+                I&apos;m Angelo Maiele, a Miami-based software engineer with 3+
+                years of experience, specializing in full-stack development and
+                UI/UX design. Proficient in{" "}
                 <span className="text-bold">
                   {" "}
                   HTML, CSS, JavaScript, React.js, Next.js, Node.js, Python,
@@ -147,7 +147,7 @@ function App() {
                 With dual degrees in Computer Science and Hospitality
                 Management, I excel in organizing teams and managing clients
                 effectively. Explore my portfolio to witness the impactful
-                projects I've delivered.
+                projects I&apos;ve delivered.
               </p>
             </div>
           </div>
@@ -183,8 +183,16 @@ function App() {
             </a>
           </div>
         </div>
-        <Projects scrollPosition={scrollPosition} theme={theme} />
-        <CoffeBanner scrollPosition={scrollPosition} theme={theme} />
+        <Projects
+          scrollPosition={scrollPosition}
+          theme={theme}
+          lenguaje={lenguaje}
+        />
+        <CoffeBanner
+          scrollPosition={scrollPosition}
+          theme={theme}
+          lenguaje={lenguaje}
+        />
         <TitleChange />
       </div>
     </>
