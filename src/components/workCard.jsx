@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import arrow2 from "../assets/Arrow2.png";
+import PropTypes from "prop-types";
 
 import "../projects.css";
 
@@ -13,8 +14,11 @@ function WorkCard({
   backend,
   scrollPosition,
   theme,
+  lenguaje,
 }) {
   const boxesRef = useRef([]);
+
+  console.log("lenguaje desde la carta", lenguaje);
 
   useEffect(() => {
     const handleIntersection = (entries) => {
@@ -75,7 +79,7 @@ function WorkCard({
         <div className="flex-2">
           <div>
             <h2 className="pa" ref={(el) => (boxesRef.current[2] = el)}>
-              timeline
+              {lenguaje === "en" ? "timeline" : "Tiempo del Projecto"}
             </h2>
             <p className="text1 pa" ref={(el) => (boxesRef.current[3] = el)}>
               {time}
@@ -93,7 +97,9 @@ function WorkCard({
           </div>
 
           <div className="max-width mar-left">
-            <h2 ref={(el) => (boxesRef.current[6] = el)}>overview</h2>
+            <h2 ref={(el) => (boxesRef.current[6] = el)}>
+              {lenguaje === "en" ? "Overview" : "Intro"}
+            </h2>
             <p className="text1 pa" ref={(el) => (boxesRef.current[7] = el)}>
               {" "}
               {description}.{" "}
@@ -107,7 +113,8 @@ function WorkCard({
               ref={(el) => (boxesRef.current[8] = el)}
               rel="noreferrer"
             >
-              check project<img src={arrow2} className="arrow2"></img>
+              {lenguaje === "en" ? "Check project" : "Mira el projecto"}
+              <img src={arrow2} className="arrow2"></img>
             </a>
           </div>
         </div>
@@ -118,5 +125,18 @@ function WorkCard({
     </>
   );
 }
+
+WorkCard.propTypes = {
+  description: PropTypes.string,
+  time: PropTypes.string,
+  mockup1: PropTypes.string,
+  link: PropTypes.string,
+  frontend: PropTypes.string,
+  backend: PropTypes.string,
+  scrollPosition: PropTypes.number,
+  title: PropTypes.string,
+  theme: PropTypes.bool.isRequired,
+  lenguaje: PropTypes.string,
+};
 
 export default WorkCard;

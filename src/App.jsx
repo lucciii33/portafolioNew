@@ -111,45 +111,84 @@ function App() {
                   : "test bio color-text-white"
               }
             >
-              Hello
+              {lenguaje === "en" ? "Hello" : "Hola"}
             </h4>
             <img src={hand} className="hand-image"></img>
           </div>
           <div className="">
-            <div className="max-width-banner-1">
-              <p
-                className={
-                  !theme ? "text1 color-text-dark" : "text1 color-text-white"
-                }
-              >
-                I&apos;m Angelo Maiele, a Miami-based software engineer with 3+
-                years of experience, specializing in full-stack development and
-                UI/UX design. Proficient in{" "}
-                <span className="text-bold">
-                  {" "}
-                  HTML, CSS, JavaScript, React.js, Next.js, Node.js, Python,
-                  Ruby, and Rails{" "}
-                </span>
-                , I create seamless user experiences for complex systems. My
-                expertise also includes databases like{" "}
-                <span className="text-bold">PostgreSQL and MongoDB </span>, and
-                softwares like{" "}
-                <span className="text-bold">
-                  photoshop, figma and ilustrator
-                </span>
-                .
-              </p>
-              <p
-                className={
-                  !theme ? "text1 color-text-dark" : "text1 color-text-white"
-                }
-              >
-                With dual degrees in Computer Science and Hospitality
-                Management, I excel in organizing teams and managing clients
-                effectively. Explore my portfolio to witness the impactful
-                projects I&apos;ve delivered.
-              </p>
-            </div>
+            {lenguaje === "en" ? (
+              <div className="max-width-banner-1">
+                <p
+                  className={
+                    !theme ? "text1 color-text-dark" : "text1 color-text-white"
+                  }
+                >
+                  I&apos;m Angelo Maiele, a Madri-based software engineer with
+                  4+ years of experience specializing in full-stack development,
+                  UI/UX design, and delivering high-quality software solutions.
+                  Proficient in
+                  <span className="text-bold">
+                    HTML, CSS, JavaScript, React.js, Next.js, Node.js, Python,
+                    Ruby on Rails, Flutter, and PostgreSQL
+                  </span>
+                  , I build seamless user experiences and robust systems. My
+                  expertise extends to databases like
+                  <span className="text-bold">PostgreSQL and MongoDB</span>, as
+                  well as tools like
+                  <span className="text-bold">
+                    Photoshop, Figma, and Illustrator
+                  </span>
+                  . I also excel in testing APIs with Postman and utilizing
+                  Cypress and Playwright for automated testing.
+                </p>
+                <p
+                  className={
+                    !theme ? "text1 color-text-dark" : "text1 color-text-white"
+                  }
+                >
+                  With dual degrees in Computer Science and Hospitality
+                  Management, I excel in organizing teams and managing clients
+                  effectively. Explore my portfolio to witness the impactful
+                  projects I&apos;ve delivered.
+                </p>
+              </div>
+            ) : (
+              <div className="max-width-banner-1">
+                <p
+                  className={
+                    !theme ? "text1 color-text-dark" : "text1 color-text-white"
+                  }
+                >
+                  Soy Angelo Maiele, un ingeniero de software con sede en Madrid
+                  y más de 4 años de experiencia, especializado en desarrollo
+                  full-stack, diseño UI/UX y en la entrega de soluciones de
+                  software de alta calidad. Soy competente en
+                  <span className="text-bold">
+                    HTML, CSS, JavaScript, React.js, Next.js, Node.js, Python,
+                    Ruby on Rails, Flutter y PostgreSQL
+                  </span>
+                  , desarrollando experiencias de usuario fluidas y sistemas
+                  robustos. Mi experiencia incluye bases de datos como
+                  <span className="text-bold">PostgreSQL y MongoDB</span>, así
+                  como herramientas como
+                  <span className="text-bold">
+                    Photoshop, Figma e Illustrator
+                  </span>
+                  . Además, destaco en la prueba de APIs con Postman y en el uso
+                  de Cypress y Playwright para pruebas automatizadas.
+                </p>
+                <p
+                  className={
+                    !theme ? "text1 color-text-dark" : "text1 color-text-white"
+                  }
+                >
+                  Con títulos en Ciencias de la Computación y Gestión de
+                  Negocios, sobresalgo en la organización de equipos y la
+                  gestión efectiva de clientes. Explora mi portafolio para
+                  conocer los proyectos impactantes que he realizado.
+                </p>
+              </div>
+            )}
           </div>
           <div className="flex top-margin no-decoration">
             <a
@@ -167,7 +206,7 @@ function App() {
                   !theme ? "test2 color-text-dark" : "test2 color-text-white"
                 }
               >
-                Contact me
+                {lenguaje === "en" ? "Contact me" : "Contactame"}
               </h3>
               <img src={email} className="hand-image"></img>
             </a>

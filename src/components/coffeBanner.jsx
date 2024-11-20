@@ -90,7 +90,7 @@ function CoffeBanner({ theme, lenguaje }) {
           <span>Linkedin</span>
         </a>
         <p className="LastNews" onClick={() => setPopUp(!popUp)}>
-          Last news
+          {lenguaje === "en" ? "Last News" : "Ultimas Noticias"}
         </p>
 
         {popUp ? (
@@ -104,8 +104,9 @@ function CoffeBanner({ theme, lenguaje }) {
                   </div>
                   <ReactPlayer url={videoUrl} />
                   <p className="p-4">
-                    This app has been made with ReactJs, Redux, Bootstrap for
-                    the front end and Ruby for the backend
+                    {lenguaje === "en"
+                      ? "This app has been made with ReactJs, Redux, Bootstrap for the front end and Ruby for the backend"
+                      : "Esta aplicación ha sido desarrollada con ReactJs, Redux y Bootstrap para el front-end, y Ruby para el back-end."}
                   </p>
                 </div>
               </div>
