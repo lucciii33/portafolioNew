@@ -2,6 +2,7 @@ import mockup1 from "./assets/BlueMedical.png";
 import mockup2 from "./assets/line5.png";
 import mockup3 from "./assets/novaai.png";
 import mockup4 from "./assets/crm.png";
+import mockup5 from "./assets/verdely.png";
 import "./projects.css";
 import WorkCard from "./components/workCard";
 import PropTypes from "prop-types";
@@ -16,6 +17,8 @@ function Projects({ scrollPosition, theme, lenguaje }) {
       line5:
         "Line5 partners with dealerships to fully fund protection plans for vehicles and recreational assets, offering guaranteed approvals and flexible payment options that build credit. With streamlined processes and seamless platform integration, Line5 helps dealerships boost sales and profitability with ease.",
       crm: "System that helps businesses manage interactions with current and potential customers, improving relationships, sales, and customer retention by organizing data and automating processes.",
+      verdely:
+        "Verdely es una API que incluye información de al menos 180 plantas de interior, con datos muy útiles, incluyendo parámetros ideales detectados por sensores de Arduino para garantizar la salud de las plantas.",
     },
     es: {
       novaAI:
@@ -25,6 +28,8 @@ function Projects({ scrollPosition, theme, lenguaje }) {
       line5:
         "Line5 colabora con concesionarios para financiar completamente planes de protección para vehículos y activos recreativos, ofreciendo aprobaciones garantizadas y opciones de pago flexibles que construyen crédito. Con procesos optimizados e integración perfecta de plataformas, Line5 ayuda a los concesionarios a aumentar las ventas y la rentabilidad con facilidad.",
       crm: "Sistema que ayuda a las empresas a gestionar las interacciones con clientes actuales y potenciales, mejorando las relaciones, las ventas y la retención de clientes al organizar datos y automatizar procesos.",
+      verdely:
+        "Verdely is an API with information on at least 180 indoor plants, providing highly useful data, including ideal values detected by Arduino sensors to ensure plant health.",
     },
   };
 
@@ -36,12 +41,14 @@ function Projects({ scrollPosition, theme, lenguaje }) {
       blueMedical: "10 Month",
       line5: "3 Years-still working",
       crm: "5 Month-still working",
+      verdely: "2 month",
     },
     es: {
       novaAI: "12 Meses-Continua",
       blueMedical: "10 Meses",
       line5: "3 Anos-Continua",
       crm: "5 meses-Continua",
+      verdely: "2 meses",
     },
   };
 
@@ -99,6 +106,19 @@ function Projects({ scrollPosition, theme, lenguaje }) {
             backend={"Ruby and Rails, Postgress, AWS"}
             mockup1={mockup4}
             link={"https://crm.staging.line5.com"}
+            scrollPosition={scrollPosition}
+            theme={theme}
+            lenguaje={lenguaje}
+          />
+
+          <WorkCard
+            title={"Verdely API"}
+            description={langTexts.verdely}
+            time={TimeTexts.verdely}
+            frontend={"Ionic, react"}
+            backend={"Node.js, MongoDB"}
+            mockup1={mockup5}
+            link={"https://plantly22.netlify.app/"}
             scrollPosition={scrollPosition}
             theme={theme}
             lenguaje={lenguaje}
