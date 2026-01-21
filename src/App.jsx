@@ -49,8 +49,8 @@ function App() {
               ? "container-dark-them"
               : "container"
             : theme
-            ? "container-2-dark-them"
-            : "container2"
+              ? "container-2-dark-them"
+              : "container2"
         }
       >
         <div className="rigth-position ">
@@ -123,33 +123,33 @@ function App() {
                     !theme ? "text1 color-text-dark" : "text1 color-text-white"
                   }
                 >
-                  I&apos;m Angelo Maiele, a Madri-based software engineer with
-                  4+ years of experience specializing in full-stack development,
-                  UI/UX design, and delivering high-quality software solutions.
-                  Proficient in
+                  I&apos;m Angelo Maiele, a Madrid-based Senior QA Automation
+                  Engineer with 5+ years of specialized experience in fintech,
+                  delivering scalable test automation solutions and ensuring
+                  product quality across the entire SDLC. I specialize in
+                  building robust E2E and API test frameworks using
                   <span className="text-bold">
-                    HTML, CSS, JavaScript, React.js, Next.js, Node.js, Python,
-                    Ruby on Rails, Flutter, and PostgreSQL
+                    Cypress, Playwright, Jest, and Postman
                   </span>
-                  , I build seamless user experiences and robust systems. My
-                  expertise extends to databases like
-                  <span className="text-bold">PostgreSQL and MongoDB</span>, as
-                  well as tools like
-                  <span className="text-bold">
-                    Photoshop, Figma, and Illustrator
-                  </span>
-                  . I also excel in testing APIs with Postman and utilizing
-                  Cypress and Playwright for automated testing.
+                  , and integrating automated testing into modern
+                  <span className="text-bold"> CI/CD pipelines</span>.
                 </p>
+
                 <p
                   className={
                     !theme ? "text1 color-text-dark" : "text1 color-text-white"
                   }
                 >
-                  With dual degrees in Computer Science and Hospitality
-                  Management, I excel in organizing teams and managing clients
-                  effectively. Explore my portfolio to witness the impactful
-                  projects I&apos;ve delivered.
+                  I have a strong background in both frontend and backend
+                  testing, validating
+                  <span className="text-bold">
+                    REST APIs, databases (PostgreSQL, MongoDB), and complex user
+                    workflows
+                  </span>
+                  . With experience in full-stack development, like react,
+                  python, ruby on rails, I bring a deep understanding of
+                  application architecture that enables more effective test
+                  design, improved test coverage, and faster release cycles.
                 </p>
               </div>
             ) : (
@@ -159,37 +159,39 @@ function App() {
                     !theme ? "text1 color-text-dark" : "text1 color-text-white"
                   }
                 >
-                  Soy Angelo Maiele, un ingeniero de software con sede en Madrid
-                  y más de 4 años de experiencia, especializado en desarrollo
-                  full-stack, diseño UI/UX y en la entrega de soluciones de
-                  software de alta calidad. Soy competente en
+                  Soy Angelo Maiele, Senior QA Automation Engineer con base en
+                  Madrid y más de 5 años de experiencia especializada en
+                  fintech, desarrollando soluciones de automatización escalables
+                  y asegurando la calidad del producto a lo largo de todo el
+                  SDLC. Estoy especializado en la creación de frameworks de
+                  pruebas E2E y API utilizando
                   <span className="text-bold">
-                    HTML, CSS, JavaScript, React.js, Next.js, Node.js, Python,
-                    Ruby on Rails, Flutter y PostgreSQL
+                    Cypress, Playwright, Jest y Postman
                   </span>
-                  , desarrollando experiencias de usuario fluidas y sistemas
-                  robustos. Mi experiencia incluye bases de datos como
-                  <span className="text-bold">PostgreSQL y MongoDB</span>, así
-                  como herramientas como
-                  <span className="text-bold">
-                    Photoshop, Figma e Illustrator
-                  </span>
-                  . Además, destaco en la prueba de APIs con Postman y en el uso
-                  de Cypress y Playwright para pruebas automatizadas.
+                  , así como en la integración de pruebas automatizadas en
+                  <span className="text-bold"> pipelines de CI/CD</span>.
                 </p>
+
                 <p
                   className={
                     !theme ? "text1 color-text-dark" : "text1 color-text-white"
                   }
                 >
-                  Con títulos en Ciencias de la Computación y Gestión de
-                  Negocios, sobresalgo en la organización de equipos y la
-                  gestión efectiva de clientes. Explora mi portafolio para
-                  conocer los proyectos impactantes que he realizado.
+                  Tengo una sólida experiencia en testing frontend y backend,
+                  validando
+                  <span className="text-bold">
+                    APIs REST, bases de datos (PostgreSQL, MongoDB) y flujos de
+                    usuario complejos
+                  </span>
+                  . Además, mi experiencia como desarrollador full-stack en
+                  react, python, ruby on rails me permite comprender la
+                  arquitectura del código en profundidad, diseñar mejores tests,
+                  aumentar la cobertura y reducir incidencias en producción.
                 </p>
               </div>
             )}
           </div>
+
           <div className="flex top-margin no-decoration">
             <a
               className={
