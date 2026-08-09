@@ -94,7 +94,7 @@
 }
 
 .box1 {
-  height: 70vh;
+  min-height: 70vh;
 }
 .rigth-position {
   display: flex;

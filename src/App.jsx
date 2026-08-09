@@ -124,15 +124,16 @@ function App() {
                   }
                 >
                   I&apos;m Angelo Maiele, a Madrid-based Senior QA Automation
-                  Engineer with 5+ years of specialized experience in fintech,
-                  delivering scalable test automation solutions and ensuring
-                  product quality across the entire SDLC. I specialize in
-                  building robust E2E and API test frameworks using
+                  Engineer and SDET with 6+ years of experience building
+                  scalable quality engineering solutions across fintech,
+                  AI-powered products, APIs, and complex distributed systems. I
+                  specialize in end-to-end, API, backend, and AI/LLM testing
+                  using
                   <span className="text-bold">
-                    Cypress, Playwright, Jest, and Postman
+                    Playwright, Cypress, Jest, Postman/Newman, SQL, and k6
                   </span>
-                  , and integrating automated testing into modern
-                  <span className="text-bold"> CI/CD pipelines</span>.
+                  , plus mobile UI automation with
+                  <span className="text-bold"> Maestro</span>.
                 </p>
 
                 <p
@@ -140,16 +141,22 @@ function App() {
                     !theme ? "text1 color-text-dark" : "text1 color-text-white"
                   }
                 >
-                  I have a strong background in both frontend and backend
-                  testing, validating
+                  I design QA strategies and automation frameworks across the
+                  entire SDLC —
                   <span className="text-bold">
-                    REST APIs, databases (PostgreSQL, MongoDB), and complex user
-                    workflows
+                    CI/CD quality gates, GitHub Actions, scheduled regression
+                    suites, Slack reporting, and load testing
                   </span>
-                  . With experience in full-stack development, like react,
-                  python, ruby on rails, I bring a deep understanding of
-                  application architecture that enables more effective test
-                  design, improved test coverage, and faster release cycles.
+                  — along with SQL-based data integrity and health checks for
+                  APIs, SFTP, cron jobs, and ingestion pipelines. I also test AI
+                  systems:
+                  <span className="text-bold">
+                    LLM evaluation with LangSmith, MCP servers, tool-calling, and
+                    AI agents
+                  </span>
+                  . My full-stack background and security-focused exploratory
+                  mindset help me find high-impact defects and work closely with
+                  engineering teams.
                 </p>
               </div>
             ) : (
@@ -159,17 +166,17 @@ function App() {
                     !theme ? "text1 color-text-dark" : "text1 color-text-white"
                   }
                 >
-                  Soy Angelo Maiele, Senior QA Automation Engineer con base en
-                  Madrid y más de 5 años de experiencia especializada en
-                  fintech, desarrollando soluciones de automatización escalables
-                  y asegurando la calidad del producto a lo largo de todo el
-                  SDLC. Estoy especializado en la creación de frameworks de
-                  pruebas E2E y API utilizando
+                  Soy Angelo Maiele, Senior QA Automation Engineer y SDET con
+                  base en Madrid y más de 6 años de experiencia construyendo
+                  soluciones escalables de quality engineering en fintech,
+                  productos con IA, APIs y sistemas distribuidos complejos.
+                  Estoy especializado en testing end-to-end, de API, backend e
+                  IA/LLM con
                   <span className="text-bold">
-                    Cypress, Playwright, Jest y Postman
+                    Playwright, Cypress, Jest, Postman/Newman, SQL y k6
                   </span>
-                  , así como en la integración de pruebas automatizadas en
-                  <span className="text-bold"> pipelines de CI/CD</span>.
+                  , además de automatización UI mobile con
+                  <span className="text-bold"> Maestro</span>.
                 </p>
 
                 <p
@@ -177,16 +184,22 @@ function App() {
                     !theme ? "text1 color-text-dark" : "text1 color-text-white"
                   }
                 >
-                  Tengo una sólida experiencia en testing frontend y backend,
-                  validando
+                  Diseño estrategias de QA y frameworks de automatización en todo
+                  el SDLC —
                   <span className="text-bold">
-                    APIs REST, bases de datos (PostgreSQL, MongoDB) y flujos de
-                    usuario complejos
+                    quality gates en CI/CD, GitHub Actions, suites de regresión
+                    programadas, reportes en Slack y pruebas de carga
                   </span>
-                  . Además, mi experiencia como desarrollador full-stack en
-                  react, python, ruby on rails me permite comprender la
-                  arquitectura del código en profundidad, diseñar mejores tests,
-                  aumentar la cobertura y reducir incidencias en producción.
+                  — junto con validación de integridad de datos vía SQL y health
+                  checks para APIs, SFTP, cron jobs y pipelines de ingesta.
+                  También pruebo sistemas de IA:
+                  <span className="text-bold">
+                    evaluación de LLMs con LangSmith, servidores MCP,
+                    tool-calling y agentes de IA
+                  </span>
+                  . Mi background full-stack y mi mentalidad de testing
+                  exploratorio y de seguridad me permiten encontrar defectos de
+                  alto impacto y colaborar de cerca con ingeniería.
                 </p>
               </div>
             )}
