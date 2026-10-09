@@ -4,6 +4,7 @@ import email from "./assets/email.png";
 import arrow from "./assets/arrow.png";
 import "./App.css";
 import Projects from "./projects";
+import News from "./components/news";
 import CoffeBanner from "./components/coffeBanner";
 import TitleChange from "./components/TitleChange";
 import { IoSunnyOutline, IoMoonOutline } from "react-icons/io5";
@@ -237,6 +238,7 @@ function App() {
             </a>
           </div>
         </div>
+        <News theme={theme} lenguaje={lenguaje} />
         <Projects
           scrollPosition={scrollPosition}
           theme={theme}
