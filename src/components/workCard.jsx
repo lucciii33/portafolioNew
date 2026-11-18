@@ -79,12 +79,14 @@ function WorkCard({
         <div className="flex-2">
           <div>
             <h2 className="pa" ref={(el) => (boxesRef.current[2] = el)}>
-              {lenguaje === "en" ? "timeline" : "Tiempo del Projecto"}
+              {lenguaje === "en" ? "timeline" : "Duración del Proyecto"}
             </h2>
             <p className="text1 pa" ref={(el) => (boxesRef.current[3] = el)}>
               {time}
             </p>
-            <h2 ref={(el) => (boxesRef.current[4] = el)}>Lenguajes</h2>
+            <h2 ref={(el) => (boxesRef.current[4] = el)}>
+              {lenguaje === "en" ? "Tech stack" : "Tecnologías"}
+            </h2>
             <p
               className="text1 pa m-test"
               ref={(el) => (boxesRef.current[5] = el)}
@@ -113,7 +115,7 @@ function WorkCard({
               ref={(el) => (boxesRef.current[8] = el)}
               rel="noreferrer"
             >
-              {lenguaje === "en" ? "Check project" : "Mira el projecto"}
+              {lenguaje === "en" ? "Check project" : "Mira el proyecto"}
               <img src={arrow2} className="arrow2"></img>
             </a>
           </div>

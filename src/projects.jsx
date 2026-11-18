@@ -18,7 +18,7 @@ function Projects({ scrollPosition, theme, lenguaje }) {
         "Line5 partners with dealerships to fully fund protection plans for vehicles and recreational assets, offering guaranteed approvals and flexible payment options that build credit. With streamlined processes and seamless platform integration, Line5 helps dealerships boost sales and profitability with ease.",
       crm: "System that helps businesses manage interactions with current and potential customers, improving relationships, sales, and customer retention by organizing data and automating processes.",
       verdely:
-        "Verdely es una API que incluye información de al menos 180 plantas de interior, con datos muy útiles, incluyendo parámetros ideales detectados por sensores de Arduino para garantizar la salud de las plantas.",
+        "Verdely is an API with information on at least 180 indoor plants, providing highly useful data, including ideal values detected by Arduino sensors to ensure plant health.",
     },
     es: {
       novaAI:
@@ -29,7 +29,7 @@ function Projects({ scrollPosition, theme, lenguaje }) {
         "Line5 colabora con concesionarios para financiar completamente planes de protección para vehículos y activos recreativos, ofreciendo aprobaciones garantizadas y opciones de pago flexibles que construyen crédito. Con procesos optimizados e integración perfecta de plataformas, Line5 ayuda a los concesionarios a aumentar las ventas y la rentabilidad con facilidad.",
       crm: "Sistema que ayuda a las empresas a gestionar las interacciones con clientes actuales y potenciales, mejorando las relaciones, las ventas y la retención de clientes al organizar datos y automatizar procesos.",
       verdely:
-        "Verdely is an API with information on at least 180 indoor plants, providing highly useful data, including ideal values detected by Arduino sensors to ensure plant health.",
+        "Verdely es una API que incluye información de al menos 180 plantas de interior, con datos muy útiles, incluyendo parámetros ideales detectados por sensores de Arduino para garantizar la salud de las plantas.",
     },
   };
 
@@ -44,10 +44,10 @@ function Projects({ scrollPosition, theme, lenguaje }) {
       verdely: "2 month",
     },
     es: {
-      novaAI: "12 Meses-Continua",
+      novaAI: "12 Meses-Continúa",
       blueMedical: "10 Meses",
-      line5: "3 Anos-Continua",
-      crm: "5 meses-Continua",
+      line5: "3 Años-Continúa",
+      crm: "5 Meses-Continúa",
       verdely: "2 meses",
     },
   };
@@ -89,8 +89,8 @@ function Projects({ scrollPosition, theme, lenguaje }) {
             title={"Line5"}
             description={langTexts.line5}
             time={TimeTexts.line5}
-            frontend={"React.js, Bootstrap, Ruby and Rails"}
-            backend={"Ruby and Rails, AWS, Postgress"}
+            frontend={"React.js, Bootstrap, Ruby on Rails"}
+            backend={"Ruby on Rails, AWS, PostgreSQL"}
             mockup1={mockup2}
             link={"https://www.line5.com"}
             scrollPosition={scrollPosition}
@@ -103,9 +103,9 @@ function Projects({ scrollPosition, theme, lenguaje }) {
             description={langTexts.crm}
             time={TimeTexts.crm}
             frontend={"React, Typescript, Remix, shadcn"}
-            backend={"Ruby and Rails, Postgress, AWS"}
+            backend={"Ruby on Rails, PostgreSQL, AWS"}
             mockup1={mockup4}
-            link={"https://crm.staging.line5.com"}
+            link={"https://www.line5.com"}
             scrollPosition={scrollPosition}
             theme={theme}
             lenguaje={lenguaje}

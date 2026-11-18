@@ -222,7 +222,7 @@ function App() {
                   !theme ? "test2 color-text-dark" : "test2 color-text-white"
                 }
               >
-                {lenguaje === "en" ? "Contact me" : "Contactame"}
+                {lenguaje === "en" ? "Contact me" : "Contáctame"}
               </h3>
               <img src={email} className="hand-image"></img>
             </a>

@@ -21,7 +21,7 @@ function News({ theme, lenguaje }) {
           ],
         },
         {
-          tag: "My product",
+          tag: "My last client",
           date: "2026",
           title: "OliviaTools — AI-powered QA platform",
           body: "I built OliviaTools, a QA platform where AI writes Playwright tests from a recorded flow, commits them to your repo and self-heals when the app changes. It also generates API and MCP regression, smoke, load and bug-report suites, plus Claude Code skills for Postman regression collections.",
@@ -48,7 +48,7 @@ function News({ theme, lenguaje }) {
           ],
         },
         {
-          tag: "Mi producto",
+          tag: "Mi último cliente",
           date: "2026",
           title: "OliviaTools — plataforma de QA con IA",
           body: "Construí OliviaTools, una plataforma de QA donde la IA escribe tests de Playwright a partir de un flujo grabado, los sube a tu repo y se auto-repara cuando la app cambia. También genera suites de regresión, smoke, carga y reportes de bugs para APIs y servidores MCP, además de skills de Claude Code para colecciones de regresión en Postman.",
