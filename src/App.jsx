@@ -47,14 +47,13 @@ const write = (key, value) => {
 
 const initialLang = () => {
   const saved = read("lang");
-  if (saved === "en" || saved === "es") return saved;
-  return navigator.language?.toLowerCase().startsWith("es") ? "es" : "en";
+  return saved === "es" ? "es" : "en";
 };
 
 function App() {
   const [lang, setLang] = useState(initialLang);
   const [theme, setTheme] = useState(
-    () => document.documentElement.getAttribute("data-theme") || "light"
+    () => document.documentElement.getAttribute("data-theme") || "dark"
   );
 
   useEffect(() => {

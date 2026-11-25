@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,8 +9,7 @@
       content="Angelo Maiele — Senior QA Automation Engineer & SDET. Playwright, Cypress, API, mobile, load and AI/LLM testing."
     />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="theme-color" content="#EEF1F6" media="(prefers-color-scheme: light)" />
-    <meta name="theme-color" content="#0B1024" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#0B1024" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -18,11 +17,11 @@
       rel="stylesheet"
     />
     <script>
-      // Apply the saved or system theme before first paint to avoid a flash.
+      // Dark by default; apply a saved choice before first paint to avoid a flash.
       (function () {
         var t = null;
         try { t = localStorage.getItem("theme"); } catch (e) {}
-        if (!t) t = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        if (t !== "light" && t !== "dark") t = "dark";
         document.documentElement.setAttribute("data-theme", t);
       })();
     </script>
