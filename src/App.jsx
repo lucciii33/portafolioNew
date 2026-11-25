@@ -1,256 +1,219 @@
-import { useState, useEffect } from "react";
-import hand from "./assets/victory.png";
-import email from "./assets/email.png";
-import arrow from "./assets/arrow.png";
-import "./App.css";
-import Projects from "./projects";
-import News from "./components/news";
-import CoffeBanner from "./components/coffeBanner";
-import TitleChange from "./components/TitleChange";
+import { Fragment, useEffect, useState } from "react";
+import PropTypes from "prop-types";
 import { IoSunnyOutline, IoMoonOutline } from "react-icons/io5";
+import Runner from "./components/Runner";
+import Work from "./components/Work";
+import TitleChange from "./components/TitleChange";
+import Reveal from "./components/Reveal";
+import { content, LINKS } from "./content";
+
+const TOOLS = [
+  "Playwright", "Cypress", "Maestro", "k6", "Postman", "Newman", "Jest", "SQL",
+  "LangSmith", "MCP", "GitHub Actions", "Claude", "React", "Node.js", "Rails", "FastAPI",
+];
+
+/** Splits the headline into words that rise in one after another. */
+function AnimatedTitle({ text }) {
+  return (
+    <h1 aria-label={text}>
+      {text.split(" ").map((word, i) => (
+        <Fragment key={`${word}-${i}`}>
+          {i > 0 && " "}
+          <span className="w" aria-hidden="true">
+            <span style={{ "--i": i }}>{word}</span>
+          </span>
+        </Fragment>
+      ))}
+    </h1>
+  );
+}
+
+AnimatedTitle.propTypes = { text: PropTypes.string.isRequired };
+
+const read = (key) => {
+  try {
+    return localStorage.getItem(key);
+  } catch {
+    return null;
+  }
+};
+const write = (key, value) => {
+  try {
+    localStorage.setItem(key, value);
+  } catch {
+    /* storage unavailable: preference just won't persist */
+  }
+};
+
+const initialLang = () => {
+  const saved = read("lang");
+  if (saved === "en" || saved === "es") return saved;
+  return navigator.language?.toLowerCase().startsWith("es") ? "es" : "en";
+};
 
 function App() {
-  const [scrollPosition, setScrollPosition] = useState(0);
-  const [theme, setTheme] = useState(false);
-  const [lenguaje, setLenguaje] = useState("en");
-  console.log("lenguaje", lenguaje);
+  const [lang, setLang] = useState(initialLang);
+  const [theme, setTheme] = useState(
+    () => document.documentElement.getAttribute("data-theme") || "light"
+  );
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrollPosition(window.scrollY);
-    };
+    document.documentElement.setAttribute("data-theme", theme);
+  }, [theme]);
 
-    window.addEventListener("scroll", handleScroll);
+  useEffect(() => {
+    document.documentElement.lang = lang;
+  }, [lang]);
 
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
-  if (scrollPosition < 5) {
-    console.log("menor a 5 deberia ser rojo");
-  } else {
-    console.log("mayor a 5 deberia ser azul");
-  }
-
-  const changeTheme = () => {
-    setTheme(!theme);
+  const toggleTheme = () => {
+    const next = theme === "dark" ? "light" : "dark";
+    setTheme(next);
+    write("theme", next);
   };
 
-  const changeLenguaje = () => {
-    setLenguaje((prev) => (prev === "en" ? "es" : "en"));
+  const toggleLang = () => {
+    const next = lang === "en" ? "es" : "en";
+    setLang(next);
+    write("lang", next);
   };
+
+  const t = content[lang];
 
   return (
     <>
-      <div
-        className={
-          scrollPosition < 2
-            ? theme
-              ? "container-dark-them"
-              : "container"
-            : theme
-              ? "container-2-dark-them"
-              : "container2"
-        }
-      >
-        <div className="rigth-position ">
-          <div className="mar-rig-circle">
-            <div
-              className={
-                !theme
-                  ? "circle-icon flex-center-ali"
-                  : "circle-icon-dark-them flex-center-ali"
-              }
+      <a className="skip" href="#top">
+        {lang === "es" ? "Saltar al contenido" : "Skip to content"}
+      </a>
+
+      <header className="topbar">
+        <div className="wrap topbar-inner">
+          <a className="wordmark" href="#top">
+            Angelo Maiele
+          </a>
+          <nav className="nav" aria-label="Main">
+            <a href="#work">{t.nav.work}</a>
+            <a href="#toolkit">{t.nav.toolkit}</a>
+            <a href="#contact">{t.nav.contact}</a>
+          </nav>
+          <div className="controls">
+            <button
+              type="button"
+              className="ctrl"
+              onClick={toggleLang}
+              aria-label={t.langLabel}
+              title={t.langLabel}
             >
-              {!theme ? (
-                <IoSunnyOutline className="icon-size" onClick={changeTheme} />
-              ) : (
-                <IoMoonOutline
-                  className="icon-size-white"
-                  onClick={changeTheme}
-                />
-              )}
-            </div>
-          </div>
-          <div className="">
-            <div
-              className={
-                !theme
-                  ? "circle-icon flex-center-ali"
-                  : "circle-icon-dark-them flex-center-ali"
-              }
+              {lang === "en" ? "ES" : "EN"}
+            </button>
+            <button
+              type="button"
+              className="ctrl"
+              onClick={toggleTheme}
+              aria-label={t.themeLabel[theme]}
+              title={t.themeLabel[theme]}
             >
-              {lenguaje === "en" ? (
-                <span
-                  className="icon-size"
-                  onClick={changeLenguaje}
-                  role="img"
-                  aria-label="USA"
-                >
-                  🇺🇸
-                </span>
-              ) : (
-                <span
-                  className="icon-size-white"
-                  onClick={changeLenguaje}
-                  role="img"
-                  aria-label="Spain"
-                >
-                  🇪🇸
-                </span>
-              )}
-            </div>
+              {theme === "dark" ? <IoSunnyOutline /> : <IoMoonOutline />}
+            </button>
           </div>
         </div>
-        <div className="box1">
-          <div className="flex">
-            <h4
-              className={
-                !theme
-                  ? "test bio color-text-dark"
-                  : "test bio color-text-white"
-              }
-            >
-              {lenguaje === "en" ? "Hello" : "Hola"}
-            </h4>
-            <img src={hand} className="hand-image"></img>
-          </div>
-          <div className="">
-            {lenguaje === "en" ? (
-              <div className="max-width-banner-1">
-                <p
-                  className={
-                    !theme ? "text1 color-text-dark" : "text1 color-text-white"
-                  }
-                >
-                  I&apos;m Angelo Maiele, a Madrid-based Senior QA Automation
-                  Engineer and SDET with 6+ years of experience building
-                  scalable quality engineering solutions across fintech,
-                  AI-powered products, APIs, and complex distributed systems. I
-                  specialize in end-to-end, API, backend, and AI/LLM testing
-                  using
-                  <span className="text-bold">
-                    Playwright, Cypress, Jest, Postman/Newman, SQL, and k6
-                  </span>
-                  , plus mobile UI automation with
-                  <span className="text-bold"> Maestro</span>.
-                </p>
+      </header>
 
-                <p
-                  className={
-                    !theme ? "text1 color-text-dark" : "text1 color-text-white"
-                  }
-                >
-                  I design QA strategies and automation frameworks across the
-                  entire SDLC —
-                  <span className="text-bold">
-                    CI/CD quality gates, GitHub Actions, scheduled regression
-                    suites, Slack reporting, and load testing
-                  </span>
-                  — along with SQL-based data integrity and health checks for
-                  APIs, SFTP, cron jobs, and ingestion pipelines. I also test AI
-                  systems:
-                  <span className="text-bold">
-                    LLM evaluation with LangSmith, MCP servers, tool-calling, and
-                    AI agents
-                  </span>
-                  . My full-stack background and security-focused exploratory
-                  mindset help me find high-impact defects and work closely with
-                  engineering teams.
-                </p>
+      <main id="top">
+        <section className="hero">
+          <div className="hero-glow" aria-hidden="true" />
+          <div className="wrap hero-grid">
+            <div className="hero-text">
+              <AnimatedTitle key={lang} text={t.hero.title} />
+              <p className="hero-role">{t.hero.role}</p>
+              <p className="hero-bio">{t.hero.bio}</p>
+              <div className="btn-row">
+                <a className="btn btn-primary" href={LINKS.linkedin} target="_blank" rel="noreferrer">
+                  {t.hero.primary}
+                </a>
+                <a className="btn btn-ghost" href={LINKS.github} target="_blank" rel="noreferrer">
+                  {t.hero.secondary}
+                </a>
               </div>
-            ) : (
-              <div className="max-width-banner-1">
-                <p
-                  className={
-                    !theme ? "text1 color-text-dark" : "text1 color-text-white"
-                  }
-                >
-                  Soy Angelo Maiele, Senior QA Automation Engineer y SDET con
-                  base en Madrid y más de 6 años de experiencia construyendo
-                  soluciones escalables de quality engineering en fintech,
-                  productos con IA, APIs y sistemas distribuidos complejos.
-                  Estoy especializado en testing end-to-end, de API, backend e
-                  IA/LLM con
-                  <span className="text-bold">
-                    Playwright, Cypress, Jest, Postman/Newman, SQL y k6
-                  </span>
-                  , además de automatización UI mobile con
-                  <span className="text-bold"> Maestro</span>.
-                </p>
-
-                <p
-                  className={
-                    !theme ? "text1 color-text-dark" : "text1 color-text-white"
-                  }
-                >
-                  Diseño estrategias de QA y frameworks de automatización en todo
-                  el SDLC —
-                  <span className="text-bold">
-                    quality gates en CI/CD, GitHub Actions, suites de regresión
-                    programadas, reportes en Slack y pruebas de carga
-                  </span>
-                  — junto con validación de integridad de datos vía SQL y health
-                  checks para APIs, SFTP, cron jobs y pipelines de ingesta.
-                  También pruebo sistemas de IA:
-                  <span className="text-bold">
-                    evaluación de LLMs con LangSmith, servidores MCP,
-                    tool-calling y agentes de IA
-                  </span>
-                  . Mi background full-stack y mi mentalidad de testing
-                  exploratorio y de seguridad me permiten encontrar defectos de
-                  alto impacto y colaborar de cerca con ingeniería.
-                </p>
-              </div>
-            )}
+            </div>
+            <Runner t={t.runner} />
           </div>
+        </section>
 
-          <div className="flex top-margin no-decoration">
-            <a
-              className={
-                scrollPosition < 2
-                  ? "under-border no-decoration"
-                  : "under-border-red no-decoration"
-              }
-              href="https://www.linkedin.com/in/angelo-maiele-68626333/details/experience/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <h3
-                className={
-                  !theme ? "test2 color-text-dark" : "test2 color-text-white"
-                }
-              >
-                {lenguaje === "en" ? "Contact me" : "Contáctame"}
-              </h3>
-              <img src={email} className="hand-image"></img>
-            </a>
+        <aside className="newsline">
+          <div className="wrap newsline-inner">
+            <span className="newsline-dot" aria-hidden="true" />
+            <time dateTime="2026-10">{t.news.date}</time>
+            <p>
+              {t.news.text}{" "}
+              <a href={LINKS.aieraNews} target="_blank" rel="noreferrer">
+                {t.news.link}
+              </a>
+            </p>
+          </div>
+        </aside>
+
+        <Work t={t.work} />
+
+        <div className="marquee" aria-hidden="true">
+          <div className="marquee-track">
+            {[...TOOLS, ...TOOLS].map((tool, i) => (
+              <span key={i}>{tool}</span>
+            ))}
           </div>
         </div>
 
-        <div className="box2">
-          <div
-            className={scrollPosition < 2 ? "circle-hover" : "circle-hover2"}
-          >
-            <a href="#projects-main">
-              <img src={arrow} className="arrow-image"></img>
-            </a>
+        <section className="toolkit section" id="toolkit" aria-labelledby="toolkit-heading">
+          <div className="wrap">
+            <header className="section-head">
+              <Reveal as="h2" id="toolkit-heading">
+                {t.toolkit.heading}
+              </Reveal>
+              <Reveal as="p" delay={1} className="section-intro">
+                {t.toolkit.intro}
+              </Reveal>
+            </header>
+            <dl className="toolkit-grid">
+              {t.toolkit.groups.map((g, i) => (
+                <Reveal key={g.name} delay={i % 3} className="toolkit-group">
+                  <dt>{g.name}</dt>
+                  {g.items.map((item) => (
+                    <dd key={item}>{item}</dd>
+                  ))}
+                </Reveal>
+              ))}
+            </dl>
           </div>
+        </section>
+
+        <section className="contact" id="contact" aria-labelledby="contact-heading">
+          <div className="wrap">
+            <Reveal as="h2" id="contact-heading">
+              {t.contact.heading}
+            </Reveal>
+            <Reveal as="p" delay={1} className="contact-text">
+              {t.contact.text}
+            </Reveal>
+            <Reveal delay={2} className="btn-row">
+              <a className="btn btn-invert" href={LINKS.linkedin} target="_blank" rel="noreferrer">
+                {t.contact.primary}
+              </a>
+              <a className="btn btn-invert-ghost" href={LINKS.github} target="_blank" rel="noreferrer">
+                {t.contact.secondary}
+              </a>
+            </Reveal>
+          </div>
+        </section>
+      </main>
+
+      <footer className="footer">
+        <div className="wrap">
+          <p>
+            © {new Date().getFullYear()} {t.contact.footer}
+          </p>
         </div>
-        <News theme={theme} lenguaje={lenguaje} />
-        <Projects
-          scrollPosition={scrollPosition}
-          theme={theme}
-          lenguaje={lenguaje}
-        />
-        <CoffeBanner
-          scrollPosition={scrollPosition}
-          theme={theme}
-          lenguaje={lenguaje}
-        />
-        <TitleChange />
-      </div>
+      </footer>
+
+      <TitleChange />
     </>
   );
 }

@@ -2,9 +2,30 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Angelo Maiele</title>
+    <meta
+      name="description"
+      content="Angelo Maiele — Senior QA Automation Engineer & SDET. Playwright, Cypress, API, mobile, load and AI/LLM testing."
+    />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="theme-color" content="#EEF1F6" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0B1024" media="(prefers-color-scheme: dark)" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Schibsted+Grotesk:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      // Apply the saved or system theme before first paint to avoid a flash.
+      (function () {
+        var t = null;
+        try { t = localStorage.getItem("theme"); } catch (e) {}
+        if (!t) t = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        document.documentElement.setAttribute("data-theme", t);
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>
